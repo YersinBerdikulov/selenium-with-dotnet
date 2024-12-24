@@ -83,7 +83,6 @@ public sealed class LoginAndLogoutFunctionalityTests : IDisposable
         var logoutButton = _webDriver.FindElement(By.XPath("//a[@id='logout_sidebar_link']"));
         logoutButton.Click();
 
-        // Wait for the login button to appear after logging out
         wait.Until(driver => driver.FindElement(By.XPath("//input[@id='login-button']")));
         var loginButtonAfterLoggingOut = _webDriver.FindElement(By.XPath("//input[@id='login-button']"));
 
