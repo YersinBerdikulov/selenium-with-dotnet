@@ -4,11 +4,11 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumWebDriverPracticeWithDotNet;
 
-public sealed class SeleniumTests : IDisposable
+public sealed class SearchFunctionalityTests : IDisposable
 {
     private readonly IWebDriver _webDriver;
 
-    public SeleniumTests()
+    public SearchFunctionalityTests()
     {
         _webDriver = new FirefoxDriver();
     }
