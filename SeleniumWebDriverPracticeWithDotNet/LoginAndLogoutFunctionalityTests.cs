@@ -22,7 +22,7 @@ public sealed class LoginAndLogoutFunctionalityTests : IDisposable
     }
 
     [Fact]
-    public void LoginToGmailAndLogout_UsingCssSelector()
+    public void LoginToWebsiteAndLogout_UsingCssSelector()
     {
         // Arrange
         _webDriver
@@ -57,7 +57,7 @@ public sealed class LoginAndLogoutFunctionalityTests : IDisposable
     }
 
     [Fact]
-    public void LoginToGmailAndLogout_UsingXPath()
+    public void LoginToWebsiteAndLogout_UsingXPath()
     {
         // Arrange
         _webDriver.Navigate().GoToUrl("https://saucedemo.com");
