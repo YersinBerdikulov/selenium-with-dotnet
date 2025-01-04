@@ -1,21 +1,21 @@
-﻿using OpenQA.Selenium;
+﻿using System.Text.Json;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace SeleniumWebDriverPracticeWithDotNet;
+namespace SeleniumWebDriverPracticeWithDotNet.BasicTests;
 
 public sealed class LoginAndLogoutFunctionalityTests : IDisposable
 {
     private readonly IWebDriver _webDriver;
-    private readonly UserData _userData;
+    private readonly UserData? _userData;
     
     public LoginAndLogoutFunctionalityTests()
     {
         _webDriver = new FirefoxDriver();
 
-        var currentDirectory = Directory.GetCurrentDirectory();
-        var jsonFilePath = Path.Combine(currentDirectory, "UserData.json");
+        var buildDirectory = Directory.GetCurrentDirectory();
+        var jsonFilePath = Path.Combine(buildDirectory + "/Data", "UserData.json");
         var json = File.ReadAllText(jsonFilePath);
 
         _userData = JsonSerializer.Deserialize<UserData>(json)!;
@@ -34,8 +34,8 @@ public sealed class LoginAndLogoutFunctionalityTests : IDisposable
         var button = _webDriver.FindElement(By.CssSelector("input#login-button"));
 
         // Act
-        usernameField.SendKeys(_userData.Username);
-        passwordField.SendKeys(_userData.Password);
+        usernameField.SendKeys(_userData?.Username);
+        passwordField.SendKeys(_userData?.Password);
         button.Click();
 
         var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(3));
@@ -67,8 +67,8 @@ public sealed class LoginAndLogoutFunctionalityTests : IDisposable
         var button = _webDriver.FindElement(By.XPath("//input[@id='login-button']"));
 
         // Act
-        usernameField.SendKeys(_userData.Username);
-        passwordField.SendKeys(_userData.Password);
+        usernameField.SendKeys(_userData?.Username);
+        passwordField.SendKeys(_userData?.Password);
         button.Click();
 
         var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(3));

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 
-namespace SeleniumWebDriverPracticeWithDotNet;
+namespace SeleniumWebDriverPracticeWithDotNet.BasicTests;
 
 public sealed class FlightReservationTests : IDisposable
 {
