@@ -9,13 +9,13 @@ public class FlightReservationPage
     private readonly IWebDriver _webDriver;
 
     [FindsBy(How = How.CssSelector, Using = "input[placeholder='Откуда']")]
-    private IWebElement? _fromWhereField;
+    private IWebElement? _fromWhereField = null!;
 
     [FindsBy(How = How.CssSelector, Using = "input[placeholder='Куда']")]
-    private IWebElement? _toWhereField;
+    private IWebElement? _toWhereField = null!;
 
     [FindsBy(How = How.CssSelector, Using = "button.search-form__btn")]
-    private IWebElement? _searchButton;
+    private IWebElement? _searchButton = null!;
 
     public FlightReservationPage(IWebDriver webDriver)
     {
