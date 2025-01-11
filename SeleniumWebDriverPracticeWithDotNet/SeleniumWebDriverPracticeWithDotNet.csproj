@@ -11,6 +11,8 @@
 
     <ItemGroup>
         <PackageReference Include="coverlet.collector" Version="6.0.0"/>
+        <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
+        <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.14.1" />
         <PackageReference Include="ExtentReports" Version="5.0.4" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
         <PackageReference Include="ReportGenerator" Version="5.4.3" />
@@ -32,6 +34,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="PomTests\Utilities\" />
       <Folder Include="TestReports\" />
     </ItemGroup>
 
