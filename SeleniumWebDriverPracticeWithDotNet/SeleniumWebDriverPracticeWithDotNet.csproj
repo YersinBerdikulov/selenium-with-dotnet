@@ -14,6 +14,7 @@
         <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
         <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.14.1" />
         <PackageReference Include="ExtentReports" Version="5.0.4" />
+        <PackageReference Include="log4net" Version="3.0.3" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
         <PackageReference Include="ReportGenerator" Version="5.4.3" />
         <PackageReference Include="Selenium.Support" Version="4.27.0" />
@@ -31,6 +32,9 @@
       <None Update="Data\UserData.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+        <None Update="log4net.config">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
